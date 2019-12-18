@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="DeliveryApp.OrderPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="25">
+                <Picker x:Name="PickerItems"
+                Title="Select Item"
+                SelectedIndexChanged="PickerItems_SelectedIndexChanged"/>
+                <Image x:Name="ImageItem"
+               WidthRequest="400"
+               HeightRequest="400"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+                <Stepper HorizontalOptions="Center"
+                 Minimum="0"
+                 Maximum="99999"
+                 Increment="1"
+                 ValueChanged="Stepper_ValueChanged"
+                 IsEnabled="False"
+                 x:Name="Stepper"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+                    Width="*"/>
+                        <ColumnDefinition
+                    Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label  x:Name="LabelCount"
+                    Text="0"
+                    FontSize="Title"
+                    HorizontalOptions="Center"
+                    Grid.Column="0"/>
+                    <Label  x:Name="LabelPrice"
+                    Text="0"
+                    FontSize="Title"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"/>
+                </Grid>
+                <Button WidthRequest="150"
+                HeightRequest="50"
+                Clicked="ButtonConfirm_Clicked"
+                Text="Confirm"
+                CornerRadius="100"
+                x:Name="ButtonConfirm"
+                IsEnabled="False"
+                BackgroundColor="Red"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
